@@ -27,7 +27,7 @@ const HeroPage = () => {
             </div>
 
             <div className="hidden shrink-0 items-center justify-center md:flex">
-                <div className="text-8xl"><Image src={'/bazar-hero.png'} width={300} height={300} alt="hero-png"></Image></div>
+                <div ><Image src={'/bazar-hero.png'} width={300} height={300} alt="hero-png"></Image></div>
             </div>
         </div>
     );

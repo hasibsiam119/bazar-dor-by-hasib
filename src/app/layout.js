@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Noto_Serif_Bengali } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Bengali, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import HeaderPage from "./components/header";
 import NavCategory from "./components/navCategory";
@@ -18,6 +18,10 @@ const notoSerifBengali = Noto_Serif_Bengali({
   subsets: ["latin",'bengali'],
 });
 
+const notoSansBengali = Noto_Sans_Bengali({
+  subsets: ["latin",'bengali'],
+})
+
 
 export const metadata = {
   title: "Bazar Dor",
@@ -29,7 +33,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="light"
-      className={`${notoSerifBengali.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${notoSansBengali.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <HeaderPage></HeaderPage>

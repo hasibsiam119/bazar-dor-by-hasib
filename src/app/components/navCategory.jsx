@@ -6,7 +6,7 @@ const NavCategory = async () => {
         throw new Error("Failed to fetch categories");
     }
     const data = await res.json()
-    console.log(data);
+    
 
     return (
         <div className=" border-b border-b-gray-200">
