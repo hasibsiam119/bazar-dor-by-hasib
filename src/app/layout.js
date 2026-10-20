@@ -1,7 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import HeaderPage from "./components/header";
 import NavCategory from "./components/navCategory";
+import Marquee from "./components/marquee";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +13,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const notoSerifBengali = Noto_Serif_Bengali({
+  
+  subsets: ["latin",'bengali'],
+});
+
 
 export const metadata = {
   title: "Create Next App",
@@ -23,11 +29,12 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-theme="light"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${notoSerifBengali.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <HeaderPage></HeaderPage>
         <NavCategory></NavCategory>
+        <Marquee></Marquee>
         
         
         {children}
