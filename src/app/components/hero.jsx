@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const date = new Date().toLocaleString('bn-BD', {
     dateStyle: "full"
@@ -20,10 +21,11 @@ const HeroPage = () => {
                     চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক
                     বিস্তারিত, গড়, সর্বনিম্ন-সর্বোচ্চ এবং দামের পরিবর্তন এক জায়গায়।
                 </p>
-
+                <Link href={'#allProduct'}>
                 <button className="mt-6 rounded-lg bg-green-700 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-green-800">
                     সব পণ্য দেখুন
                 </button>
+                </Link>
             </div>
 
             <div className="hidden shrink-0 items-center justify-center md:flex">

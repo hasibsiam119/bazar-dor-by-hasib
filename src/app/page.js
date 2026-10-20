@@ -38,7 +38,7 @@ export default async function Home() {
           </div>
         </div>
         <div>
-          <div className="py-4 my-4">
+          <div className="py-4 my-4" id="allProduct">
           <h1 className="font-bold text-2xl ">সব পণ্য</h1>
           <p className="text-sm">মোট {data.length}টি পণ্য দেখানো হচ্ছে</p>
           </div>

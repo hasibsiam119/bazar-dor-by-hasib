@@ -1,9 +1,12 @@
+import Link from "next/link";
+
 function ProductCard({ product }) {
   const isUp = product.change.dir === "up";
 
   return (
+    <Link href={`/detailsPage/${product.id}`}>
     <div className="relative box-border min-h-[170px] w-full max-w-[450px] rounded-[20px] border border-[#dce5de] bg-[#fafcfb] p-5 text-[#202a23]">
-      {/* Product Info */}
+    
       <div className="flex items-center gap-4">
         <div className="flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-[17px] bg-[#f0f4f0] text-[28px]">
           {product.image}
@@ -20,7 +23,6 @@ function ProductCard({ product }) {
         </div>
       </div>
 
-      {/* Price & Change */}
       <div className="mt-4 flex items-end justify-between">
         <div>
           <p className="mb-1 text-base">
@@ -45,6 +47,7 @@ function ProductCard({ product }) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 

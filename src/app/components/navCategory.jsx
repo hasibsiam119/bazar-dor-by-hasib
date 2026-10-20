@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 const NavCategory = async () => {
@@ -13,12 +14,14 @@ const NavCategory = async () => {
             <div className="flex gap-10 py-3 max-w-7xl mx-auto">
                 {
                     data.map(c =>
-                        <div key={c.id} className="flex">
+                        <Link key={c.id} href={`/category/${c.slug}`}>
+                        <div  className="flex">
                             <span>{c.icon}</span>
                             <h1 >{c.nameBn}</h1>
 
 
                         </div>
+                        </Link>
                     )}
             </div>
         </div>
