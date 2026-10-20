@@ -1,5 +1,5 @@
 import Image from "next/image";
-import NavCategory from "./navCategory";
+
 const date = new Date().toLocaleString('bn-BD',{
     dateStyle:"full"
 })
