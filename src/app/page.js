@@ -30,7 +30,7 @@ export default async function Home() {
           </div>
         </div>
         <div>
-          <h1 className="font-bold text-2xl py-4 my-4"><span className="text-red-700">▼ </span>আজ দাম কমেছে</h1>
+          <h1 className="font-bold text-2xl py-4 my-4"><span className="text-green-700">▼ </span>আজ দাম কমেছে</h1>
           <div className="grid grid-cols-3 gap-5">
             {
               downPrice.map(product => <ProductCard key={product.id} product={product}></ProductCard>)

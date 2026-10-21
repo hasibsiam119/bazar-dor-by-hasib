@@ -10,7 +10,9 @@ const CategoryPage = async ({ params }) => {
         throw new Error("Failed to fetch categories");
     }
     const data = await res.json()
-    console.log(data);
+    
+    
+
     return (
         <div className="bg-[#F0F5F0]">
             <div className="max-w-7xl mx-auto">
@@ -31,7 +33,7 @@ const CategoryPage = async ({ params }) => {
                     </div>
                     <div>
                         <select defaultValue="Pick a Runtime" className="select ">
-                            <option value="" disabled>দাম অনুযায়ী সাজান</option>
+                            <option value="" disabled={true}>ডিফল্ট</option>
                             <option value="low">কম থেকে বেশি</option>
                             <option value="high">বেশি থেকে কম</option>
 

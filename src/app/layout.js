@@ -3,6 +3,7 @@ import "./globals.css";
 import HeaderPage from "./components/header";
 import NavCategory from "./components/navCategory";
 import Marquee from "./components/marquee";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
         
         
         {children}
-        
+          <ToastContainer />
         </body>
     </html>
   );
