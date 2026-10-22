@@ -77,6 +77,14 @@ export default function NotFound() {
           transition: background 0.2s, transform 0.2s;
         }
         .nf-btn:hover { transform: translateY(-1px); }
+        @media (max-width: 480px) {
+          .nf-card { padding: 28px 18px; border-radius: 16px; }
+          .nf-icon { width: 88px; height: 88px; }
+          .nf-code { font-size: 56px; }
+          .nf-title { font-size: 18px; }
+          .nf-actions { flex-direction: column; }
+          .nf-btn { width: 100%; box-sizing: border-box; text-align: center; }
+        }
         .nf-primary { background: #16a34a; color: #ffffff; }
         .nf-primary:hover { background: #15803d; }
         .nf-ghost {
