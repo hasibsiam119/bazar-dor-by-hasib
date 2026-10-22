@@ -2,7 +2,7 @@
 
 **Today's market prices, at a glance.**
 
-🔗 **Live Demo:** [https://your-live-link.vercel.app](https://your-live-link.vercel.app)
+🔗 **Live Demo:** [https://bazar-dor-by-hasib.vercel.app](https://bazar-dor-by-hasib.vercel.app)
 
 ---
 

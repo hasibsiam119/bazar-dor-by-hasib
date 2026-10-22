@@ -18,7 +18,7 @@ function ProductCard({ product }) {
           </h3>
 
           <p className="mt-1 text-base">
-            প্রতি কেজি
+           প্রতি {product.unit}
           </p>
         </div>
       </div>

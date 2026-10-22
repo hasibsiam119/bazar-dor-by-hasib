@@ -27,7 +27,7 @@ const notoSansBengali = Noto_Sans_Bengali({
 
 export const metadata = {
   title: "Bazar Dor",
-  description: "Developed by hasibsiam119",
+  description: "আজকের বাজারের দাম এক নজরে",
 };
 
 export default function RootLayout({ children }) {
