@@ -1,9 +1,10 @@
 'use client'
 
-import { authClient } from "@/lib/auth-client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { authClient } from "../lib/auth-client";
 
 const date = new Date().toLocaleString('bn-BD', {
     dateStyle: "full"
@@ -12,7 +13,7 @@ const date = new Date().toLocaleString('bn-BD', {
 const HeaderPage = () => {
     const { data: session } = authClient.useSession();
     const user = session?.user;
-
+    
     const [isOpen, setIsOpen] = useState(false);
 
     const handleSignout = async () => {
@@ -45,7 +46,7 @@ const HeaderPage = () => {
                         </div>
                     </Link>
 
-                   
+
                     <div>
                         {user ? (
                             <div className="relative">
@@ -54,30 +55,27 @@ const HeaderPage = () => {
                                     onClick={() => setIsOpen(!isOpen)}
                                     className="flex items-center gap-3 rounded-full px-2 py-1 transition hover:bg-gray-100"
                                 >
+
                                     <div className="avatar">
-                                        <div className="h-11 w-11 overflow-hidden rounded-full">
-                                            {user.image ? (
-                                                <img
-                                                    src={user.image}
-                                                    alt="Profile"
-                                                    className="h-full w-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="flex h-full w-full items-center justify-center bg-gray-200 text-lg font-bold text-gray-600">
-                                                    {user.name?.charAt(0) || "U"}
-                                                </div>
-                                            )}
+                                        <div className="h-10 w-10 overflow-hidden rounded-full bg-gray-200">
+                                            <img
+                                                src={user?.image || "/default-avatar.png"}
+                                                alt={user?.name || "User"}
+                                                referrerPolicy="no-referrer"
+                                                className="h-full w-full object-cover"
+                                            />
                                         </div>
                                     </div>
+                                
+
 
                                     <span className="font-semibold text-gray-700">
                                         {user.name}
                                     </span>
 
                                     <svg
-                                        className={`h-3 w-3 text-gray-500 transition-transform ${
-                                            isOpen ? "rotate-180" : ""
-                                        }`}
+                                        className={`h-3 w-3 text-gray-500 transition-transform ${isOpen ? "rotate-180" : ""
+                                            }`}
                                         viewBox="0 0 12 12"
                                         fill="none"
                                         stroke="currentColor"
@@ -87,7 +85,7 @@ const HeaderPage = () => {
                                     </svg>
                                 </button>
 
-                              
+
                                 {isOpen && (
                                     <div
                                         className="fixed inset-0 z-40"
@@ -95,11 +93,11 @@ const HeaderPage = () => {
                                     />
                                 )}
 
-                           
+
                                 {isOpen && (
                                     <div className="absolute right-0 top-full z-50 mt-3 w-[300px] rounded-[20px] border border-gray-200 bg-white p-6 shadow-xl">
 
-                                      
+
                                         <div className="mb-5">
                                             <h3 className="text-lg font-bold text-gray-800">
                                                 {user.name}
@@ -110,7 +108,7 @@ const HeaderPage = () => {
                                             </p>
                                         </div>
 
-                                       
+
                                         <Link
                                             href="/profile"
                                             onClick={() => setIsOpen(false)}
@@ -127,7 +125,7 @@ const HeaderPage = () => {
                                             <span>আমার প্রোফাইল</span>
                                         </Link>
 
-                                       
+
                                         <button
                                             onClick={handleSignout}
                                             className="flex w-full items-center gap-2 rounded-lg py-2.5 text-red-500 transition hover:bg-red-50"
