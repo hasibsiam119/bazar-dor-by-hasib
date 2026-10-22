@@ -1,4 +1,5 @@
-
+import { Suspense } from "react";
+import Link from "next/link";
 import NavCategoryLink from "./NavCategoryLink";
 
 
@@ -14,9 +15,21 @@ const NavCategory = async () => {
         <div className=" border-b border-b-gray-200">
             <div className="flex gap-4 sm:gap-10 py-3 max-w-7xl mx-auto overflow-x-auto px-4 xl:px-0">
                 {
-                    data.map(c =>
-                        <NavCategoryLink key={c.id} category={c} />
-                    )}
+                    data.map(c => (
+                        <Suspense
+                            key={c.id}
+                            fallback={
+                                <Link href={`/category/${c.slug}`}>
+                                    <div className="flex shrink-0 whitespace-nowrap gap-1 py-2 border-b-2 border-transparent text-gray-700">
+                                        <span>{c.icon}</span>
+                                        <h1>{c.nameBn}</h1>
+                                    </div>
+                                </Link>
+                            }
+                        >
+                            <NavCategoryLink category={c} />
+                        </Suspense>
+                    ))}
             </div>
         </div>
     );
