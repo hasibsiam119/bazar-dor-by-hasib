@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# বাজার দর | BazarDor
 
-## Getting Started
+**Today's market prices, at a glance.**
 
-First, run the development server:
+🔗 **Live Demo:** [https://your-live-link.vercel.app](https://your-live-link.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## About
+
+**BazarDor (বাজার দর)** is a Bangla-first market price tracker for Bangladesh. It shows the daily prices of everyday essentials such as rice, lentils, oil, vegetables, fish, meat, eggs and spices, along with how each price has changed and how prices compare across markets and divisions.
+
+---
+
+## Key Features
+
+1. **Price movement tracking:** The home page highlights the top 6 products whose prices went up and the top 6 whose prices went down today, with ▲ / ▼ indicators and percentage change.
+2. **Browse by category:** Pick a category from the navigation bar to see its products. The active category is highlighted.
+3. **Sort by price:** On each category page, sort products from low to high or high to low.
+4. **Market-wise price details:** Each product page shows the minimum, maximum and average price, plus a full table of prices by market and division.
+5. **Authentication and profile:** Sign up and sign in with email and password, or with Google or GitHub. Users can view their profile and update their name.
+
+**Also included:** a live price ticker (marquee), a fully responsive layout, loading skeletons and a custom 404 page.
+
+---
+
+## Tech Stack
+
+| Area | Technology |
+|------|------------|
+| Framework | [Next.js](https://nextjs.org/) (App Router, Server Components), [React](https://react.dev/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/), [daisyUI](https://daisyui.com/), [HeroUI](https://www.heroui.com/) |
+| Authentication | [Better Auth](https://www.better-auth.com/) (Email/Password, Google, GitHub) |
+| Database | [MongoDB](https://www.mongodb.com/) via the Better Auth MongoDB adapter |
+| Data source | Programming Hero BazarDor Open API |
+| Other | `react-toastify` (notifications), `react-marquee-text` (price ticker), `next/font` (Noto Sans Bengali) |
+
+---
+
+## Project Structure
+
+```
+app/
+├── (auth)/
+│   ├── sign-in/page.jsx        # Sign in
+│   └── sign-up/page.jsx        # Sign up
+├── api/auth/[...all]/route.js  # Better Auth API handler
+├── category/[categoryId]/      # Products by category
+├── detailsPage/[id]/           # Product details and market-wise prices
+├── profile/page.jsx            # User profile
+├── components/                 # Header, Hero, NavCategory, ProductCard, Marquee, Footer ...
+├── lib/                        # auth.js (server), auth-client.js (client)
+├── layout.js                   # Root layout
+├── page.js                     # Home page
+├── loading.js                  # Loading skeleton
+└── not-found.js                # 404 page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Data comes from the [Programming Hero BazarDor Open API](https://openapi.programming-hero.com/api/bazardor):
 
-## Learn More
+| Endpoint | Description |
+|----------|-------------|
+| `GET /categories` | List of all categories |
+| `GET /products` | All products |
+| `GET /products?category=<slug>` | Products in a category |
+| `GET /products/<id>` | Product details with market-wise prices |
 
-To learn more about Next.js, take a look at the following resources:
+Responses are revalidated every 30 minutes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Developer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed by **hasibsiam119**
