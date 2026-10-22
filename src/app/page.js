@@ -1,4 +1,3 @@
-
 import HeroPage from "./components/hero";
 import ProductCard from "./components/productCard";
 
@@ -19,11 +18,11 @@ export default async function Home() {
  
   return (
     <div className="bg-[#F0F5F0]">
-      <div className="max-w-7xl mx-auto py-5 ">
+      <div className="max-w-7xl mx-auto py-5 px-4 xl:px-0">
         <HeroPage></HeroPage>
         <div>
           <h1 className="font-bold text-2xl py-4 my-4"><span className="text-red-700">▲ </span>আজ দাম বেড়েছে</h1>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {
               upPrice.map(product => <ProductCard key={product.id} product={product}></ProductCard>)
             }
@@ -31,7 +30,7 @@ export default async function Home() {
         </div>
         <div>
           <h1 className="font-bold text-2xl py-4 my-4"><span className="text-green-700">▼ </span>আজ দাম কমেছে</h1>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {
               downPrice.map(product => <ProductCard key={product.id} product={product}></ProductCard>)
             }
@@ -42,7 +41,7 @@ export default async function Home() {
           <h1 className="font-bold text-2xl ">সব পণ্য</h1>
           <p className="text-sm">মোট {data.length}টি পণ্য দেখানো হচ্ছে</p>
           </div>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {
               data.map(product => <ProductCard key={product.id} product={product}></ProductCard>)
             }

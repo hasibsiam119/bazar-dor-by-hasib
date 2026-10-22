@@ -7,7 +7,7 @@ const date = new Date().toLocaleString('bn-BD', {
 
 const HeroPage = () => {
     return (
-        <div className="flex min-h-[245px] items-center justify-between rounded-3xl border border-gray-200 bg-white px-6 ">
+        <div className="flex min-h-[245px] items-center justify-between rounded-3xl border border-gray-200 bg-white px-4 py-6 sm:px-6 md:py-0">
             <div className="">
                 <span className=" rounded-full bg-green-100 px-3 py-1  text-xs font-medium text-green-700">
                     {date}
@@ -19,7 +19,7 @@ const HeroPage = () => {
 
                 <p className="mt-4  text-sm leading-6 text-gray-500">
                     চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক
-                    বিস্তারিত, গড়, সর্বনিম্ন-সর্বোচ্চ এবং দামের পরিবর্তন এক জায়গায়।
+                    বিস্তারিত, গড়, সর্বনিম্ন-সর্বোচ্চ এবং দামের পরিবর্তন এক জায়গায়।
                 </p>
                 <Link href={'#allProduct'}>
                     <button className="mt-6 rounded-lg bg-green-700 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-green-800">

@@ -14,7 +14,7 @@ const CategoryPage = async ({ params }) => {
 
     return (
         <div className="bg-[#F0F5F0]">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto px-4 xl:px-0">
                 <div className="border border-gray-200 rounded-2xl p-5 flex gap-5 my-8 bg-white">
                     <div>
                         <div className="h-[60px] w-[60px] rounded-[17px] bg-[#f0f4f0] text-[40px]">

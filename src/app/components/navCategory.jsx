@@ -12,7 +12,7 @@ const NavCategory = async () => {
 
     return (
         <div className=" border-b border-b-gray-200">
-            <div className="flex gap-10 py-3 max-w-7xl mx-auto">
+            <div className="flex gap-4 sm:gap-10 py-3 max-w-7xl mx-auto overflow-x-auto px-4 xl:px-0">
                 {
                     data.map(c =>
                         <NavCategoryLink key={c.id} category={c} />

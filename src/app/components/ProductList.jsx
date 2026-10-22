@@ -17,7 +17,7 @@ const ProductList = ({ products }) => {
 
     return (
         <>
-            <div className="flex justify-end gap-8 p-8 items-center border border-gray-200 rounded-2xl bg-white">
+            <div className="flex justify-end gap-4 sm:gap-8 p-4 sm:p-8 items-center border border-gray-200 rounded-2xl bg-white">
                 <div>সাজান</div>
                 <div>
                     <select
@@ -36,7 +36,7 @@ const ProductList = ({ products }) => {
                 মোট {sortedProducts.length}টি পণ্য দেখানো হচ্ছে
             </h1>
 
-            <div className="grid grid-cols-3 gap-5 py-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 py-3">
                 {sortedProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}

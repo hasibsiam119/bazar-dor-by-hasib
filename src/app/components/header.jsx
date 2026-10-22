@@ -13,7 +13,7 @@ const date = new Date().toLocaleString('bn-BD', {
 const HeaderPage = () => {
     const { data: session } = authClient.useSession();
     const user = session?.user;
-    
+
     const [isOpen, setIsOpen] = useState(false);
 
     const handleSignout = async () => {
@@ -23,11 +23,11 @@ const HeaderPage = () => {
 
     return (
         <div className="border-b border-b-gray-200">
-            <div className="mx-auto max-w-7xl py-3">
+            <div className="mx-auto max-w-7xl py-3 px-4 xl:px-0">
                 <div className="flex items-center justify-between">
 
                     <Link href="/">
-                        <div className="flex items-center gap-5">
+                        <div className="flex items-center gap-3 sm:gap-5">
                             <div className="rounded bg-[#05893ec9] p-4">
                                 <Image
                                     src="/logo-icon.png"
@@ -38,7 +38,7 @@ const HeaderPage = () => {
                             </div>
 
                             <div>
-                                <h1 className="text-2xl font-extrabold">
+                                <h1 className="text-xl sm:text-2xl font-extrabold">
                                     বাজার দর
                                 </h1>
                                 <p className="text-xs">{date}</p>
@@ -66,10 +66,10 @@ const HeaderPage = () => {
                                             />
                                         </div>
                                     </div>
-                                
 
 
-                                    <span className="font-semibold text-gray-700">
+
+                                    <span className="hidden sm:inline font-semibold text-gray-700">
                                         {user.name}
                                     </span>
 
@@ -95,7 +95,7 @@ const HeaderPage = () => {
 
 
                                 {isOpen && (
-                                    <div className="absolute right-0 top-full z-50 mt-3 w-[300px] rounded-[20px] border border-gray-200 bg-white p-6 shadow-xl">
+                                    <div className="absolute right-0 top-full z-50 mt-3 w-[280px] sm:w-[300px] rounded-[20px] border border-gray-200 bg-white p-6 shadow-xl">
 
 
                                         <div className="mb-5">
@@ -153,13 +153,13 @@ const HeaderPage = () => {
                         ) : (
                             <div>
                                 <Link href="/sign-in">
-                                    <button className="btn btn-ghost rounded-xl">
+                                    <button className="btn btn-sm sm:btn-md btn-ghost rounded-xl">
                                         সাইন ইন
                                     </button>
                                 </Link>
 
                                 <Link href="/sign-up">
-                                    <button className="btn btn-success rounded-xl bg-[#05893E] text-white shadow-none">
+                                    <button className="btn btn-sm sm:btn-md btn-success rounded-xl bg-[#05893E] text-white shadow-none">
                                         সাইন আপ
                                     </button>
                                 </Link>
